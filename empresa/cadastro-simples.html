@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastre sua empresa e tenha acesso a talentos qualificados no Dubai">
+    <title>Leão Careers | Cadastro Simplificado de Empresa</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css">
+    
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/company-simple-forms.css">
+    
+    <!-- Script de inclusão de componentes -->
+    <script src="../js/include.js"></script>
+</head>
+<body>
+    <!-- Placeholder para o cabeçalho -->
+    <div id="header-placeholder"></div>
+    
+    <main class="page-content">
+        <div class="container">
+            <div class="register-container">
+                <h1 class="page-title">Cadastro de Empresa</h1>
+                <p class="page-description">Encontre os melhores talentos para sua operação no Dubai</p>
+                
+                <div class="form-alert info">
+                    <div class="alert-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <p>Preencha apenas as informações essenciais para iniciarmos o contato. Após o cadastro, você poderá fornecer informações mais detalhadas na área administrativa.</p>
+                        <p>Já possui cadastro? <a href="../login">Faça login aqui</a>.</p>
+                    </div>
+                </div>
+                
+                <form id="company-register-simple" class="register-form">
+                    <div class="form-section">
+                        <h2>Informações da Empresa</h2>
+                        
+                        <div class="form-group website-search">
+                            <label for="company-website">Site da Empresa*</label>
+                            <div class="input-with-button">
+                                <input type="url" id="company-website" name="company-website" required placeholder="https://suaempresa.com">
+                                <button type="button" class="btn btn-secondary" id="search-company">
+                                    <i class="fas fa-search"></i> Buscar
+                                </button>
+                            </div>
+                            <div class="form-description">Digite o site da empresa para tentarmos preencher automaticamente os dados</div>
+                        </div>
+                        
+                        <!-- Preview dos dados encontrados (inicialmente oculto) -->
+                        <div id="company-preview" class="company-preview-container" style="display: none;">
+                            <h3>Dados encontrados</h3>
+                            <div class="preview-content">
+                                <div class="preview-item">
+                                    <strong>Nome:</strong> <span id="preview-name">-</span>
+                                </div>
+                                <div class="preview-item">
+                                    <strong>Setor:</strong> <span id="preview-sector">-</span>
+                                </div>
+                                <div class="preview-actions">
+                                    <button type="button" class="btn btn-sm btn-outline" id="cancel-preview">Cancelar</button>
+                                    <button type="button" class="btn btn-sm btn-primary" id="apply-preview">Usar estes dados</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company-name">Nome da Empresa*</label>
+                            <input type="text" id="company-name" name="company-name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company-country">País de Origem*</label>
+                                <select id="company-country" name="company-country" required class="select2">
+                                    <option value="">Selecione...</option>
+                                    <option value="AE">Emirados Árabes Unidos</option>
+                                    <option value="BR">Brasil</option>
+                                    <option value="US">Estados Unidos</option>
+                                    <option value="UK">Reino Unido</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="ES">Espanha</option>
+                                    <option value="IT">Itália</option>
+                                    <option value="FR">França</option>
+                                    <option value="DE">Alemanha</option>
+                                    <option value="SA">Arábia Saudita</option>
+                                    <option value="QA">Catar</option>
+                                    <option value="KW">Kuwait</option>
+                                    <option value="BH">Bahrein</option>
+                                    <option value="OM">Omã</option>
+                                    <option value="other">Outro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company-sector">Setor de Atuação*</label>
+                                <select id="company-sector" name="company-sector" required class="select2">
+                                    <option value="">Selecione...</option>
+                                    <option value="tecnologia">Tecnologia</option>
+                                    <option value="financas">Finanças</option>
+                                    <option value="imobiliario">Imobiliário</option>
+                                    <option value="construcao">Construção</option>
+                                    <option value="hospitalidade">Hospitalidade</option>
+                                    <option value="turismo">Turismo</option>
+                                    <option value="varejo">Varejo</option>
+                                    <option value="saude">Saúde</option>
+                                    <option value="educacao">Educação</option>
+                                    <option value="logistica">Logística</option>
+                                    <option value="servicos">Serviços Profissionais</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h2>Informações de Contato</h2>
+                        
+                        <div class="form-group">
+                            <label for="contact-name">Nome do Contato*</label>
+                            <input type="text" id="contact-name" name="contact-name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-email">E-mail Corporativo*</label>
+                                <input type="email" id="contact-email" name="contact-email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-phone">Telefone*</label>
+                                <div class="phone-input-group">
+                                    <select id="phone-country" name="phone-country" required class="select2">
+                                        <option value="">Código</option>
+                                        <option value="+971" selected>🇦🇪 +971</option>
+                                        <option value="+55">🇧🇷 +55</option>
+                                        <option value="+1">🇺🇸 +1</option>
+                                        <option value="+44">🇬🇧 +44</option>
+                                        <option value="+966">🇸🇦 +966</option>
+                                        <option value="+974">🇶🇦 +974</option>
+                                        <option value="+965">🇰🇼 +965</option>
+                                        <option value="+973">🇧🇭 +973</option>
+                                        <option value="+968">🇴🇲 +968</option>
+                                    </select>
+                                    <input type="tel" id="contact-phone" name="contact-phone" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-role">Cargo*</label>
+                            <select id="contact-role" name="contact-role" required class="select2">
+                                <option value="">Selecione...</option>
+                                <option value="ceo">CEO / Diretor Executivo</option>
+                                <option value="cto">CTO / Diretor de Tecnologia</option>
+                                <option value="cfo">CFO / Diretor Financeiro</option>
+                                <option value="coo">COO / Diretor de Operações</option>
+                                <option value="diretor">Diretor</option>
+                                <option value="gerente">Gerente</option>
+                                <option value="rh">Recursos Humanos</option>
+                                <option value="recrutamento">Recrutamento</option>
+                                <option value="administrativo">Administrativo</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h2>Necessidades de Recrutamento</h2>
+                        
+                        <div class="form-group">
+                            <label for="hiring-needs">Quais tipos de profissionais sua empresa busca?*</label>
+                            <select id="hiring-needs" name="hiring-needs[]" required multiple class="select2">
+                                <option value="executivos">Executivos / C-Level</option>
+                                <option value="gerentes">Gerentes</option>
+                                <option value="tecnologia">Tecnologia / Desenvolvedores</option>
+                                <option value="financeiros">Financeiros</option>
+                                <option value="vendas">Vendas / Comercial</option>
+                                <option value="marketing">Marketing / Digital</option>
+                                <option value="administrativos">Administrativos</option>
+                                <option value="operacionais">Operacionais</option>
+                                <option value="atendimento">Atendimento ao Cliente</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hiring-timeline">Quando pretende iniciar o processo de contratação?*</label>
+                            <select id="hiring-timeline" name="hiring-timeline" required class="select2">
+                                <option value="">Selecione...</option>
+                                <option value="imediato">Imediatamente</option>
+                                <option value="1-3-meses">Nos próximos 1-3 meses</option>
+                                <option value="3-6-meses">Nos próximos 3-6 meses</option>
+                                <option value="6-12-meses">Nos próximos 6-12 meses</option>
+                                <option value="apenas-explorando">Apenas explorando opções</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h2>Termos e Condições</h2>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">
+                                Li e aceito os <a href="../termos" target="_blank">Termos de Uso</a> e a <a href="../privacidade" target="_blank">Política de Privacidade</a>*
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="lgpd" name="lgpd" required>
+                            <label for="lgpd">
+                                Autorizo o tratamento dos dados de acordo com a <a href="../lgpd" target="_blank">Lei Geral de Proteção de Dados (LGPD)</a>*
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="marketing-consent" name="marketing-consent">
+                            <label for="marketing-consent">
+                                Aceito receber informações sobre serviços, eventos e conteúdos da Leão Careers
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-lg">Cadastrar Empresa</button>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <p>Prefere enviar as informações completas? <a href="cadastro.html">Acesse o formulário completo</a>.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Placeholder para o rodapé -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Script para inicializar os componentes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Configuração da página
+            const pageConfig = {
+                title: 'Cadastro Simplificado de Empresa',
+                headerTarget: '#header-placeholder',
+                footerTarget: '#footer-placeholder',
+                additionalStyles: '<link rel="stylesheet" href="../css/forms.css">',
+                additionalScripts: '<script src="../js/company-form.js"><\/script>'
+            };
+            
+            // Inicializar componentes
+            await window.pageUtils.initialize(pageConfig);
+        });
+    </script>
+</body>
+</html> 

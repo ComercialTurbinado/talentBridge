@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leão Careers | Conectando Talentos a Oportunidades</title>
+    
+    <!-- Script de inclusão de componentes -->
+    <script src="js/include.js"></script>
+</head>
+<body>
+    <!-- Placeholder para o cabeçalho -->
+    <div id="header-placeholder"></div>
+    
+    <main class="page-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Conectando Talentos Brasileiros a Oportunidades em Dubai</h1>
+                    <p>A plataforma que aproxima empresas em Dubai e profissionais qualificados do Brasil</p>
+                    <div class="hero-actions">
+                        <a href="candidato/cadastro.html" class="btn btn-primary">Para Candidatos</a>
+                        <a href="empresa/cadastro-simples.html" class="btn btn-secondary">Para Empresas</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/dubai-skyline.jpg" alt="Dubai Skyline">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Como Funciona</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Para Candidatos</h3>
+                        <p>Cadastre seu perfil profissional com suas habilidades e experiência</p>
+                        <a href="candidato/cadastro.html" class="btn btn-outline">Cadastrar Perfil</a>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Para Empresas</h3>
+                        <p>Encontre os melhores talentos brasileiros para sua operação em Dubai</p>
+                        <a href="empresa/cadastro-simples.html" class="btn btn-outline">Cadastrar Empresa</a>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Conexões</h3>
+                        <p>Nossa equipe cuida da triagem e indicação dos melhores candidatos</p>
+                        <a href="sobre.html" class="btn btn-outline">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Depoimentos</h2>
+                <div class="testimonials-carousel">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Graças à Leão Careers, consegui realizar meu sonho de trabalhar em Dubai. O processo foi muito profissional e recebi todo o suporte necessário."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/profile-1.jpg" alt="Ana Silva">
+                            <div class="author-info">
+                                <h4>Ana Silva</h4>
+                                <p>Gerente de Marketing Digital</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Encontramos excelentes profissionais brasileiros para nossa empresa através da plataforma. O processo de recrutamento foi ágil e eficiente."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/profile-2.jpg" alt="Mohammed Al Fahim">
+                            <div class="author-info">
+                                <h4>Mohammed Al Fahim</h4>
+                                <p>CEO de Tecnologia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Profissionais Colocados</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Empresas Parceiras</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Taxa de Satisfação</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Setores Atendidos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Pronto para dar o próximo passo?</h2>
+                    <p>Seja você um profissional em busca de novas oportunidades ou uma empresa que precisa de talentos qualificados, a Leão Careers está aqui para ajudar.</p>
+                    <div class="cta-actions">
+                        <a href="candidato/cadastro.html" class="btn btn-primary">Cadastrar Currículo</a>
+                        <a href="empresa/cadastro-simples.html" class="btn btn-secondary">Cadastrar Empresa</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Placeholder para o rodapé -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Script para inicializar os componentes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Configuração da página
+            const pageConfig = {
+                title: 'Conectando Talentos a Oportunidades',
+                headerTarget: '#header-placeholder',
+                footerTarget: '#footer-placeholder',
+                additionalStyles: '<link rel="stylesheet" href="css/home.css">',
+                additionalScripts: ''
+            };
+            
+            // Inicializar componentes
+            await window.pageUtils.initialize(pageConfig);
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leão Careers | Cadastro de Candidato</title>
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+    
+    <!-- Script de inclusão de componentes -->
+    <script src="../js/include.js"></script>
+</head>
+<body>
+    <!-- Placeholder para o cabeçalho -->
+    <div id="header-placeholder"></div>
+    
+    <main class="page-content">
+        <div class="container">
+            <div class="register-container">
+                <h1 class="page-title">Cadastro de Candidato</h1>
+                <p class="page-description">Preencha seus dados para encontrar as melhores oportunidades no Dubai</p>
+                
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Dados Básicos</div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Qualificações</div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Experiência</div>
+                        </div>
+                        <div class="step" data-step="4">
+                            <div class="step-number">4</div>
+                            <div class="step-label">Currículo</div>
+                        </div>
+                        <div class="step" data-step="5">
+                            <div class="step-number">5</div>
+                            <div class="step-label">Termos</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 20%;"></div>
+                    </div>
+                </div>
+                
+                <form id="candidate-register-form" class="register-form">
+                    <!-- Step 1: Dados Básicos -->
+                    <div class="form-step active" data-step="1">
+                        <div class="form-section">
+                            <h2>Informações Pessoais</h2>
+                            
+                            <div class="form-group">
+                                <label for="candidate-name">Nome Completo*</label>
+                                <input type="text" id="candidate-name" name="candidate-name" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="candidate-email">E-mail*</label>
+                                    <input type="email" id="candidate-email" name="candidate-email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="candidate-phone">Telefone*</label>
+                                    <div class="phone-input-group">
+                                        <select id="phone-country" name="phone-country" required class="select2">
+                                            <option value="">Código</option>
+                                            <option value="+55" selected>🇧🇷 +55</option>
+                                            <option value="+1">🇺🇸 +1</option>
+                                            <option value="+44">🇬🇧 +44</option>
+                                            <option value="+971">🇦🇪 +971</option>
+                                            <option value="+966">🇸🇦 +966</option>
+                                            <option value="+974">🇶🇦 +974</option>
+                                            <option value="+965">🇰🇼 +965</option>
+                                            <option value="+973">🇧🇭 +973</option>
+                                            <option value="+968">🇴🇲 +968</option>
+                                        </select>
+                                        <input type="tel" id="candidate-phone" name="candidate-phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="candidate-nacionality">Nacionalidade*</label>
+                                    <select id="candidate-nacionality" name="candidate-nacionality" required class="select2">
+                                        <option value="">Selecione...</option>
+                                        <option value="BR" selected>Brasil</option>
+                                        <option value="US">Estados Unidos</option>
+                                        <option value="UK">Reino Unido</option>
+                                        <option value="PT">Portugal</option>
+                                        <option value="ES">Espanha</option>
+                                        <option value="IT">Itália</option>
+                                        <option value="FR">França</option>
+                                        <option value="DE">Alemanha</option>
+                                        <option value="other">Outro</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="candidate-birthday">Data de Nascimento*</label>
+                                    <input type="date" id="candidate-birthday" name="candidate-birthday" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="candidate-linkedin">LinkedIn</label>
+                                    <input type="url" id="candidate-linkedin" name="candidate-linkedin" placeholder="https://linkedin.com/in/seuusuario">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="candidate-portfolio">Portfolio/Site</label>
+                                    <input type="url" id="candidate-portfolio" name="candidate-portfolio" placeholder="https://seusite.com">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <div></div> <!-- Placeholder para alinhamento -->
+                            <button type="button" class="btn btn-primary next-step" data-next="2">Próxima Etapa</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Qualificações -->
+                    <div class="form-step" data-step="2">
+                        <div class="form-section">
+                            <h2>Formação e Idiomas</h2>
+                            
+                            <div class="form-group">
+                                <label for="academic-level">Formação Acadêmica*</label>
+                                <select id="academic-level" name="academic-level" required class="select2">
+                                    <option value="">Selecione...</option>
+                                    <option value="ensino-medio">Ensino Médio</option>
+                                    <option value="tecnico">Técnico</option>
+                                    <option value="superior-incompleto">Superior Incompleto</option>
+                                    <option value="superior-completo">Superior Completo</option>
+                                    <option value="pos-graduacao">Pós-graduação</option>
+                                    <option value="mestrado">Mestrado</option>
+                                    <option value="doutorado">Doutorado</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="course-name">Curso/Área*</label>
+                                <input type="text" id="course-name" name="course-name" required placeholder="Ex: Administração, Engenharia, TI">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="english-level">Nível de Inglês*</label>
+                                <select id="english-level" name="english-level" required class="select2">
+                                    <option value="">Selecione...</option>
+                                    <option value="basico">Básico</option>
+                                    <option value="intermediario">Intermediário</option>
+                                    <option value="avancado">Avançado</option>
+                                    <option value="fluente">Fluente</option>
+                                    <option value="nativo">Nativo</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="other-languages">Outros Idiomas</label>
+                                <select id="other-languages" name="other-languages[]" multiple class="select2">
+                                    <option value="espanhol">Espanhol</option>
+                                    <option value="frances">Francês</option>
+                                    <option value="alemao">Alemão</option>
+                                    <option value="italiano">Italiano</option>
+                                    <option value="arabe">Árabe</option>
+                                    <option value="mandarim">Mandarim</option>
+                                    <option value="japones">Japonês</option>
+                                    <option value="russo">Russo</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="certifications">Certificações Relevantes</label>
+                                <textarea id="certifications" name="certifications" placeholder="Liste suas certificações mais importantes (uma por linha)"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline prev-step" data-prev="1">Etapa Anterior</button>
+                            <button type="button" class="btn btn-primary next-step" data-next="3">Próxima Etapa</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Experiência -->
+                    <div class="form-step" data-step="3">
+                        <div class="form-section">
+                            <h2>Experiência Profissional</h2>
+                            
+                            <div class="form-group">
+                                <label for="current-position">Cargo Atual ou Mais Recente*</label>
+                                <input type="text" id="current-position" name="current-position" required placeholder="Ex: Desenvolvedor Frontend">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company-name">Empresa*</label>
+                                <input type="text" id="company-name" name="company-name" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="experience-time">Tempo de Experiência Total*</label>
+                                    <select id="experience-time" name="experience-time" required class="select2">
+                                        <option value="">Selecione...</option>
+                                        <option value="menos-1-ano">Menos de 1 ano</option>
+                                        <option value="1-3-anos">1-3 anos</option>
+                                        <option value="3-5-anos">3-5 anos</option>
+                                        <option value="5-10-anos">5-10 anos</option>
+                                        <option value="mais-10-anos">Mais de 10 anos</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="job-sector">Setor de Atuação*</label>
+                                    <select id="job-sector" name="job-sector" required class="select2">
+                                        <option value="">Selecione...</option>
+                                        <option value="tecnologia">Tecnologia</option>
+                                        <option value="saude">Saúde</option>
+                                        <option value="educacao">Educação</option>
+                                        <option value="financas">Finanças</option>
+                                        <option value="varejo">Varejo</option>
+                                        <option value="servicos">Serviços</option>
+                                        <option value="industria">Indústria</option>
+                                        <option value="construcao">Construção</option>
+                                        <option value="turismo">Turismo/Hospitalidade</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="job-skills">Principais Habilidades*</label>
+                                <select id="job-skills" name="job-skills[]" required multiple class="select2">
+                                    <option value="gestao">Gestão de Projetos</option>
+                                    <option value="programacao">Programação</option>
+                                    <option value="design">Design</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="vendas">Vendas</option>
+                                    <option value="atendimento">Atendimento ao Cliente</option>
+                                    <option value="administrativo">Administrativo</option>
+                                    <option value="financeiro">Financeiro</option>
+                                    <option value="logistica">Logística</option>
+                                    <option value="rh">Recursos Humanos</option>
+                                    <option value="juridico">Jurídico</option>
+                                    <option value="engenharia">Engenharia</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="job-description">Breve Descrição das Atividades</label>
+                                <textarea id="job-description" name="job-description" placeholder="Descreva suas principais responsabilidades e conquistas"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline prev-step" data-prev="2">Etapa Anterior</button>
+                            <button type="button" class="btn btn-primary next-step" data-next="4">Próxima Etapa</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Currículo -->
+                    <div class="form-step" data-step="4">
+                        <div class="form-section">
+                            <h2>Upload do Currículo</h2>
+                            
+                            <div class="form-group">
+                                <label for="resume-file">Anexe seu Currículo*</label>
+                                <input type="file" id="resume-file" name="resume-file" accept=".pdf,.doc,.docx" required>
+                                <div class="form-description">Formatos aceitos: PDF, DOC, DOCX. Tamanho máximo: 5MB.</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="desired-position">Cargo Desejado*</label>
+                                <input type="text" id="desired-position" name="desired-position" required placeholder="Ex: Gerente de Marketing">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="desired-sector">Setores de Interesse*</label>
+                                <select id="desired-sector" name="desired-sector[]" required multiple class="select2">
+                                    <option value="tecnologia">Tecnologia</option>
+                                    <option value="saude">Saúde</option>
+                                    <option value="educacao">Educação</option>
+                                    <option value="financas">Finanças</option>
+                                    <option value="varejo">Varejo</option>
+                                    <option value="servicos">Serviços</option>
+                                    <option value="industria">Indústria</option>
+                                    <option value="construcao">Construção</option>
+                                    <option value="turismo">Turismo/Hospitalidade</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="availability">Disponibilidade para Início*</label>
+                                <select id="availability" name="availability" required class="select2">
+                                    <option value="">Selecione...</option>
+                                    <option value="imediata">Imediata</option>
+                                    <option value="15-dias">15 dias</option>
+                                    <option value="30-dias">30 dias</option>
+                                    <option value="60-dias">60 dias</option>
+                                    <option value="negociar">A negociar</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="salary-expectation">Expectativa Salarial (USD/ano)</label>
+                                <select id="salary-expectation" name="salary-expectation" class="select2">
+                                    <option value="">Selecione...</option>
+                                    <option value="30k-50k">$30,000 - $50,000</option>
+                                    <option value="50k-70k">$50,000 - $70,000</option>
+                                    <option value="70k-90k">$70,000 - $90,000</option>
+                                    <option value="90k-120k">$90,000 - $120,000</option>
+                                    <option value="120k+">Acima de $120,000</option>
+                                    <option value="negociar">A negociar</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline prev-step" data-prev="3">Etapa Anterior</button>
+                            <button type="button" class="btn btn-primary next-step" data-next="5">Próxima Etapa</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5: Termos -->
+                    <div class="form-step" data-step="5">
+                        <div class="form-section">
+                            <h2>Termos e Condições</h2>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">
+                                    Li e aceito os <a href="/termos" target="_blank">Termos de Uso</a> e a <a href="/privacidade" target="_blank">Política de Privacidade</a>*
+                                </label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="lgpd" name="lgpd" required>
+                                <label for="lgpd">
+                                    Autorizo o tratamento dos meus dados pessoais de acordo com a <a href="/lgpd" target="_blank">Lei Geral de Proteção de Dados (LGPD)</a>*
+                                </label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="cv-share" name="cv-share" required>
+                                <label for="cv-share">
+                                    Autorizo o compartilhamento do meu currículo com empresas parceiras que podem ter interesse no meu perfil*
+                                </label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="marketing-consent" name="marketing-consent">
+                                <label for="marketing-consent">
+                                    Aceito receber informações sobre vagas, serviços e conteúdos da Leão Careers
+                                </label>
+                            </div>
+                            
+                            <div class="form-description">
+                                <p><strong>Observação:</strong> Ao finalizar seu cadastro, nosso time irá analisar seu perfil e você receberá um e-mail de confirmação. Seu perfil só ficará visível para empresas após a aprovação interna.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline prev-step" data-prev="4">Etapa Anterior</button>
+                            <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Placeholder para o rodapé -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="../js/candidate-form.js"></script>
+    
+    <!-- Script para inicializar os componentes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Configuração da página
+            const pageConfig = {
+                title: 'Cadastro de Candidato',
+                headerTarget: '#header-placeholder',
+                footerTarget: '#footer-placeholder',
+                additionalStyles: '<link rel="stylesheet" href="../css/forms.css">',
+                additionalScripts: '<script src="../js/candidate-form.js"><\/script>'
+            };
+            
+            // Inicializar componentes
+            await window.pageUtils.initialize(pageConfig);
+        });
+    </script>
+</body>
+</html> 

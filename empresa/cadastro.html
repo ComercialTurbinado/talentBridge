@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leão Careers | Cadastro de Empresa</title>
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="../img/logo.svg" alt="Leão Careers">
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-menu">
+                        <li><a href="/">Início</a></li>
+                        <li><a href="/empresas">Para Empresas</a></li>
+                        <li><a href="/candidatos">Para Candidatos</a></li>
+                        <li><a href="/sobre">Sobre</a></li>
+                        <li><a href="/contato">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons">
+                    <a href="/login" class="btn btn-outline">Entrar</a>
+                    <a href="/cadastro" class="btn btn-primary">Cadastre-se</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="register-container">
+                <h1 class="page-title">Cadastro de Empresa</h1>
+                <p class="page-description">Preencha as informações básicas para acessar nossa plataforma de recrutamento internacional</p>
+                
+                <div class="form-alert info">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Prefere um formulário mais simples? <a href="./cadastro-simples">Acesse nossa versão simplificada</a> para um cadastro mais rápido.</p>
+                </div>
+                
+                <form id="company-register-form" class="register-form">
+                    <div class="form-section">
+                        <h2>Informações da Empresa</h2>
+                        
+                        <div class="form-group">
+                            <label for="company-website">Website da Empresa*</label>
+                            <div class="website-input-group">
+                                <input type="url" id="company-website" name="company-website" required placeholder="https://">
+                                <button type="button" class="btn btn-primary" id="fetch-company-data">
+                                    <i class="fas fa-search"></i>
+                                    Buscar Dados
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="company-preview" style="display: none;">
+                            <div class="preview-header">
+                                <img id="company-logo" src="" alt="Logo da Empresa">
+                                <div class="preview-info">
+                                    <h3 id="preview-name"></h3>
+                                    <p id="preview-description"></p>
+                                </div>
+                            </div>
+                            <div class="preview-details">
+                                <p><i class="fas fa-envelope"></i> <span id="preview-email"></span></p>
+                            </div>
+                            <div class="preview-actions">
+                                <button type="button" class="btn btn-primary" id="use-data">Usar Estes Dados</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company-name">Nome da Empresa*</label>
+                            <input type="text" id="company-name" name="company-name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company-country">País de Origem*</label>
+                            <select id="company-country" name="company-country" required class="select2">
+                                <option value="">Selecione...</option>
+                                <option value="US">🇺🇸 Estados Unidos</option>
+                                <option value="UK">🇬🇧 Reino Unido</option>
+                                <option value="AE">🇦🇪 Emirados Árabes Unidos</option>
+                                <option value="SA">🇸🇦 Arábia Saudita</option>
+                                <option value="QA">🇶🇦 Catar</option>
+                                <option value="KW">🇰🇼 Kuwait</option>
+                                <option value="BH">🇧🇭 Bahrein</option>
+                                <option value="OM">🇴🇲 Omã</option>
+                                <option value="other">🌐 Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company-sector">Setor de Atuação*</label>
+                            <select id="company-sector" name="company-sector" required class="select2">
+                                <option value="">Selecione...</option>
+                                <option value="tecnologia">Tecnologia</option>
+                                <option value="saude">Saúde</option>
+                                <option value="educacao">Educação</option>
+                                <option value="financeiro">Financeiro</option>
+                                <option value="varejo">Varejo</option>
+                                <option value="industria">Indústria</option>
+                                <option value="servicos">Serviços</option>
+                                <option value="energia">Energia</option>
+                                <option value="construcao">Construção</option>
+                                <option value="logistica">Logística</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Dados de Contato</h2>
+                        
+                        <div class="form-group">
+                            <label for="contact-name">Seu Nome*</label>
+                            <input type="text" id="contact-name" name="contact-name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">E-mail Corporativo*</label>
+                            <input type="email" id="contact-email" name="contact-email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-phone">Telefone*</label>
+                            <div class="phone-input-group">
+                                <select id="phone-country" name="phone-country" required class="select2">
+                                    <option value="">Selecione...</option>
+                                    <option value="+1" data-country="US">🇺🇸 +1</option>
+                                    <option value="+44" data-country="UK">🇬🇧 +44</option>
+                                    <option value="+971" data-country="AE">🇦🇪 +971</option>
+                                    <option value="+966" data-country="SA">🇸🇦 +966</option>
+                                    <option value="+974" data-country="QA">🇶🇦 +974</option>
+                                    <option value="+965" data-country="KW">🇰🇼 +965</option>
+                                    <option value="+973" data-country="BH">🇧🇭 +973</option>
+                                    <option value="+968" data-country="OM">🇴🇲 +968</option>
+                                </select>
+                                <input type="tel" id="contact-phone" name="contact-phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-role">Cargo/Função*</label>
+                            <input type="text" id="contact-role" name="contact-role" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Interesse</h2>
+                        
+                        <div class="form-group">
+                            <label for="recruiting-needs">Necessidades de Recrutamento*</label>
+                            <select id="recruiting-needs" name="recruiting-needs" required class="select2" multiple>
+                                <option value="tecnologia">Profissionais de Tecnologia</option>
+                                <option value="engenharia">Engenharia</option>
+                                <option value="vendas">Vendas</option>
+                                <option value="financas">Finanças</option>
+                                <option value="rh">Recursos Humanos</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="saude">Saúde</option>
+                                <option value="educacao">Educação</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hiring-timeline">Prazo para Contratação*</label>
+                            <select id="hiring-timeline" name="hiring-timeline" required class="select2">
+                                <option value="">Selecione...</option>
+                                <option value="imediato">Imediato</option>
+                                <option value="1-3-meses">1-3 meses</option>
+                                <option value="3-6-meses">3-6 meses</option>
+                                <option value="6-12-meses">6-12 meses</option>
+                                <option value="mais-12-meses">Mais de 12 meses</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Termos e Privacidade</h2>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">
+                                Li e aceito os <a href="/termos" target="_blank">Termos de Uso</a> e a <a href="/privacidade" target="_blank">Política de Privacidade</a>*
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="lgpd" name="lgpd" required>
+                            <label for="lgpd">
+                                Autorizo o tratamento dos meus dados pessoais de acordo com a <a href="/lgpd" target="_blank">LGPD</a>*
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="marketing-consent" name="marketing-consent">
+                            <label for="marketing-consent">
+                                Aceito receber informações sobre serviços, oportunidades e conteúdos da Leão Careers
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../img/logo.svg" alt="Leão Careers">
+                    <p>Conectando talentos a oportunidades globais</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="/">Início</a></li>
+                            <li><a href="/empresas">Para Empresas</a></li>
+                            <li><a href="/candidatos">Para Candidatos</a></li>
+                            <li><a href="/sobre">Sobre Nós</a></li>
+                            <li><a href="/contato">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="/termos">Termos de Uso</a></li>
+                            <li><a href="/privacidade">Política de Privacidade</a></li>
+                            <li><a href="/lgpd">LGPD</a></li>
+                            <li><a href="/cookies">Cookies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Contato</h3>
+                        <ul>
+                            <li><a href="mailto:contato@leaocareers.com">contato@leaocareers.com</a></li>
+                            <li><a href="tel:+551140028922">+55 11 4002-8922</a></li>
+                            <li>São Paulo, SP - Brasil</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Leão Careers. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="../js/company-simple-forms.js"></script>
+</body>
+</html> 
