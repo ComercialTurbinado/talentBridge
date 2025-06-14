@@ -3,7 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        - npm ci --include=dev
+        - npm list typescript @types/react @types/node || npm install typescript @types/react @types/node
     build:
       commands:
         - npm run build
