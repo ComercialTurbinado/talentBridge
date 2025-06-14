@@ -150,7 +150,7 @@ export default function AdminLogin() {
           </form>
 
           {/* Demo Credentials */}
-          <div className={styles.demoCredentials}>
+          {/* <div className={styles.demoCredentials}>
             <h4>Credenciais de Teste:</h4>
             <p><strong>Email:</strong> admin@leaocareers.com</p>
             <p><strong>Senha:</strong> 123456</p>

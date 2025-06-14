@@ -100,7 +100,7 @@ function CandidatosContent() {
 
   const vagaId = searchParams?.get('vaga');
 
-  const loadCandidatos = () => {
+  const loadCandidatos = useCallback(() => {
     // Dados simulados de candidatos com informações completas do currículo
     const candidatosSimulados: Candidato[] = [
       {
@@ -228,7 +228,7 @@ function CandidatosContent() {
 
     setCandidatos(candidatosSimulados);
     setLoading(false);
-  };
+  }, [vagaId]);
 
   useEffect(() => {
     const currentUser = AuthService.getUser();
