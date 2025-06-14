@@ -443,7 +443,7 @@ export default function CursoDetalhes() {
 
             <div className={styles.courseMedia}>
               <div className={styles.courseImage}>
-                <img src={course.thumbnail} alt={course.title} />
+                <Image src={course.thumbnail} alt={course.title} width={400} height={250} />
                 {course.status === 'in_progress' && course.progress > 0 && (
                   <div className={styles.progressOverlay}>
                     <div className={styles.progressInfo}>
@@ -749,9 +749,11 @@ export default function CursoDetalhes() {
 
                   <div className={styles.reviewCard}>
                     <div className={styles.reviewHeader}>
-                      <img 
+                      <Image 
                         src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" 
                         alt="João Santos" 
+                        width={40}
+                        height={40}
                       />
                       <div>
                         <h4>João Santos</h4>

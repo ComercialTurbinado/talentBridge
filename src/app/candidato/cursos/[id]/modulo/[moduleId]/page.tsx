@@ -751,9 +751,11 @@ function Example() {
                 
                 <div className={styles.commentsList}>
                   <div className={styles.comment}>
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" 
                       alt="Ana Silva" 
+                      width={40}
+                      height={40}
                     />
                     <div className={styles.commentContent}>
                       <div className={styles.commentHeader}>
@@ -869,7 +871,7 @@ function Example() {
           <div className={styles.sidebarCard}>
             <h3>Instrutor</h3>
             <div className={styles.instructorInfo}>
-              <img src={course.instructorAvatar} alt={course.instructor} />
+              <Image src={course.instructorAvatar} alt={course.instructor} width={40} height={40} />
               <div>
                 <h4>{course.instructor}</h4>
                 <p>Desenvolvedor Full Stack</p>
